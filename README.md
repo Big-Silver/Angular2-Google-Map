@@ -1,6 +1,26 @@
-# Angular2GoogleMap
+# Angular2-Google Map
 
+<img width="900" src="src/public/img/Angular2-Google Map.png" border="0" />
+
+## About
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.26.
+Using Google Map Api, Manage the serious informations of Google Map Marker.
+This Angular2-Google Map example is written by [Big Silver].
+
+## Quick Start
+
+# clone our repo
+$ git clone https://github.com/Big-Silver/Angular2-Google-Map.git angular2-Google-Map
+
+# change directory to your app
+$ cd angular2-Google-Map
+
+# install the dependencies with npm
+$ npm install
+
+# start the server
+$ npm start
+
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

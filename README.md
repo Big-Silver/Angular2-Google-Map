@@ -9,6 +9,7 @@ This Angular2-Google Map example is written by [Big Silver].
 
 ## Quick Start
 
+```bash
 # clone our repo
 $ git clone https://github.com/Big-Silver/Angular2-Google-Map.git angular2-Google-Map
 
@@ -20,7 +21,7 @@ $ npm install
 
 # start the server
 $ npm start
-
+```
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

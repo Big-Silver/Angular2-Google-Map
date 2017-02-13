@@ -1,0 +1,36 @@
+div .container-fluid {
+    padding: 20px;
+}
+
+#mapid { height: 180px; }
+
+.sebm-google-map-container {
+    height: 300px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 15px;
+}
+
+table tr:nth-child(even) {
+    background-color: #eee;
+}
+
+table tr:nth-child(odd) {
+    background-color:#fff;
+}
+
+.result-table {
+    height: 500px;
+    border: solid 1px black;
+    overflow-y: auto;
+}
+
+#result_input {
+    max-width: 90px !important;
+    text-align: center;
+}

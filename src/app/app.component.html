@@ -1,0 +1,111 @@
+<div class="container">
+  <div class="container-fluid">
+    <h1>Angular2-Google Map B&S</h1>
+  </div>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="col-md-4" id="map">
+        <sebm-google-map [latitude]="lat" [longitude]="lng" [title]="title">
+          <sebm-google-map-marker *ngFor="let map_marker of map_items1" [latitude]="map_marker.lang" 
+          [longitude]="map_marker.long" (markerClick)="test()">
+            <sebm-google-map-info-window>
+              <strong id="google-marker" [ngStyle]="{'color': map_marker.fontcolor, 'font-size': map_marker.fontsize, 'background': map_marker.strokecolor, 'font-weight': map_marker.strokeweight}">{{map_marker.text}}</strong>
+            </sebm-google-map-info-window>
+          </sebm-google-map-marker>
+        </sebm-google-map>
+      </div>
+      <div class="col-md-4" id="map1">
+        <sebm-google-map [latitude]="lat" [longitude]="lng" [title]="title">
+          <sebm-google-map-marker *ngFor="let map_marker of map_items2" [latitude]="map_marker.lang" 
+          [longitude]="map_marker.long">
+            <sebm-google-map-info-window>
+              <strong id="google-marker" [ngStyle]="{'color': map_marker.fontcolor, 'font-size': map_marker.fontsize, 'background': map_marker.strokecolor, 'font-weight': map_marker.strokeweight}">{{map_marker.text}}</strong>
+            </sebm-google-map-info-window>
+          </sebm-google-map-marker>
+        </sebm-google-map>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group row">
+          <label for="example-number-input" class="col-3 col-form-label">Map:</label>
+          <div class="col-4">
+            <button id="move" (click)="toggleMaps()">Toggle Maps</button>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="example-number-input" class="col-3 col-form-label">Font Size:</label>
+          <div class="col-8">
+            <input type="text" id="font" value="15" [(ngModel)]="fontSize">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="example-number-input" class="col-3 col-form-label">Font Color:</label>
+          <div class="col-8">
+            <input type="text" id="font-color" value="#ff0000" [(ngModel)]="fontColor">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="example-number-input" class="col-3 col-form-label">Font Weight:</label>
+          <div class="col-8">
+            <input type="text" id="stroke-weight" value="300" [(ngModel)]="fontWeight">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="example-number-input" class="col-3 col-form-label">Stroke Color:</label>
+          <div class="col-8">
+            <input type="text" id="stroke-color" value="#8ada55" [(ngModel)]="strokeColor">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="example-number-input" class="col-3 col-form-label">Text:</label>
+          <div class="col-8">
+            <input type="text" id="text" value="foo" [(ngModel)]="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="example-number-input" class="col-3 col-form-label">Latitude:</label>
+          <div class="col-8">
+            <input type="number" id="text" value="foo" [(ngModel)]="latitude">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="example-number-input" class="col-3 col-form-label">Longitude:</label>
+          <div class="col-8">
+            <input type="number" id="text" value="foo" [(ngModel)]="longitude">
+          </div>
+        </div>
+        <div class="form-group row">
+          <button class="col-3" (click)="reSet()">Reset</button>
+          <button class="col-3" (click)="addMarker(latitude, longitude, text, strokeColor, fontWeight, fontColor, fontSize)">Register</button>
+        </div>
+      </div>
+    </div>    
+  </div>
+  <div class="container-fluid">
+    <div class="result-table">
+      <table class="col-md-12">
+        <tr>
+          <th>No</th>
+          <th>Lang</th>
+          <th>Long</th>
+          <th>Text</th>
+          <th>Font Size</th>
+          <th>Font Color</th>
+          <th>Font Weight</th>
+          <th>Stroke Color</th>
+          <th>Remove</th>
+        </tr>
+        <tr *ngFor="let item of map_tempItmes">
+          <td>{{item.id}}</td>
+          <td><input id="result_input" type="number" [(ngModel)]="item.lang"></td>
+          <td><input id="result_input" type="number" [(ngModel)]="item.long"></td>
+          <td><input id="result_input" type="text" [(ngModel)]="item.text"></td>
+          <td><input id="result_input" type="text" [(ngModel)]="item.fontsize"></td>
+          <td><input id="result_input" type="text" [(ngModel)]="item.fontcolor"></td>
+          <td><input id="result_input" type="text" [(ngModel)]="item.strokeweight"></td>
+          <td><input id="result_input" type="text" [(ngModel)]="item.strokecolor"></td>
+          <td><button (click)="removeMarker(item.id)">Remove</button></td>          
+        </tr>
+      </table>
+    </div>
+  </div> 
+</div>
